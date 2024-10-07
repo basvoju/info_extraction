@@ -1,15 +1,15 @@
-import fitz  # PyMuPDF
+import fitz
 import easyocr
 import re
 import spacy
 from PIL import Image
 import io
 
-# Load the spaCy English model for NER
+
 nlp = spacy.load("en_core_web_sm")
 
 # Initialize EasyOCR reader
-reader = easyocr.Reader(['ch_sim','en'])  # Only loading the English model for now
+reader = easyocr.Reader(['ch_sim','en'])
 
 # Extract images from the PDF using PyMuPDF (fitz)
 def extract_images_from_pdf(pdf_path):
@@ -78,7 +78,7 @@ def process_pdf_for_key_value_pairs(pdf_path):
 
 def format_text_with_gpt(text):
     response = openai.ChatCompletion.create(
-        model="gpt-4",  # Or "gpt-4" if you have access
+        model="gpt-4",
         messages=[
             {"role": "system", "content": "You are a helpful assistant that formats text and returns the text in "},
             {"role": "user", "content": raw_text}
@@ -86,7 +86,7 @@ def format_text_with_gpt(text):
     )
     return response['choices'][0]['message']['content']
 
-# Example usage
+
 pdf_path = r'C:\Users\BASVOJU\Desktop\Conxai\Inspection_Certificate.pdf'
 extracted_key_values = process_pdf_for_key_value_pairs(pdf_path)
 print("All Extracted Key-Value Pairs:\n", extracted_key_values)
