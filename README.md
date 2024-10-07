@@ -48,7 +48,7 @@ python -m spacy download en_core_web_sm
 
 ## Example:
 An example of the extracted JSON format:
-
+```
 {
     "customer_company_name": "Company Name",
     "spec": "Specification",
@@ -58,3 +58,4 @@ An example of the extracted JSON format:
     "total_quantity": 8,
     "total_weight": "Weight in units"
 }
+```
