@@ -27,7 +27,6 @@ To run this script, need to have the following Python packages installed:
 - `pydantic`
 
 Install these packages using pip:
-
 ```bash
 pip install PyMuPDF easyocr spacy openai langchain_openai python-dotenv pydantic Pillow
 
@@ -35,7 +34,7 @@ pip install PyMuPDF easyocr spacy openai langchain_openai python-dotenv pydantic
 Additionally, you need to download the SpaCy language model:
 
 python -m spacy download en_core_web_sm
-
+```
 
 
 ## Usage
